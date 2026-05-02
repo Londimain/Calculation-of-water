@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Исправлено: 1350deg → 135deg */
+}
+
+.container {
+    max-width: 900px; /* Увеличено для трёх колонок */
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для трёхколоночного макета */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.column h2 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 0; /* Убрано лишнее пространство */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по левому краю внутри колонки */
+    width: 100%;
+    gap: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left; /* Выравнивание текста подписи по левому краю */
+    color: #444;
+}
+
+input[type="number"] {
+    width: 100%; /* Занимает всю ширину колонки */
+    max-width: 280px; /* Ограничение максимальной ширины */
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 15px auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #4CAF50;
+    border-radius: 8px;
+    max-width: 280px;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.result h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.result p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+h1 {
+    margin: 20px 0; /* Исправлено: было "margin: 2" */
+    font-size: 2.2rem; /* Немного уменьшен для гармонии с новым макетом */
+    text-align: center;
+    color: #333;
+}
+
+/* Название с радужным эффектом */
+.rainbow-text {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    background: repeating-linear-gradient(
+        90deg,
+        red, orange 10%, yellow 20%,
+        green 30%, blue 40%, indigo 50%,
+        violet 60%, red 70%
+    );
+    -webkit-text-stroke: 1px rgb(255, 255, 255); /* толщина и цвет обводки */
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbowShift 20s linear infinite;
+    text-align: center;
+    margin: 15px 0;
+}
+
+@keyframes rainbowShift {
+    from { background-position: 100% center; } /* Начало: справа */
+    to { background-position: 0% center; }   /* Конец: слева */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;
+        margin: 10px;
+    }
+    
+    .columns {
+        grid-template-columns: 1fr; /* На мобильных — одна колонка */
+        gap: 20px;
+    }
+    
+    .column {
+        align-items: center;
+    }
+    
+    input[type="number"],
+    button {
+        max-width: 100%; /* На мобильных — полная ширина */
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.8rem; /* Уменьшаем заголовок на мобильных */
+    }
+    
+    .rainbow-text {
+        font-size: 2rem;
+    }
+}

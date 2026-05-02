@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="noindex">
+    <meta name="yandex" content="index, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ильенков Сергей Михайлович">
+    <title>Расчёт показаний счётчиков воды</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- Стандартные фавиконы -->
+    <link rel="icon" type="images/png" sizes="32x32" href="images/png/png-32x32.png">
+    <link rel="icon" type="images/png" sizes="16x16" href="images/png/png-16x16.png">
+</head>
+<body>
+    <div class="container">
+        <h1 class="rainbow-text">Расчёт показаний счётчиков воды</h1>
+
+        <div class="columns">
+            <!-- Колонка 1: 1-й месяц -->
+            <div class="column">
+                <h2>1-й месяц</h2>
+                <div class="input-group">
+                    <label for="main1">Основной счётчик:</label>
+            <input type="number" id="main1" placeholder="Например: 346360">
+        </div>
+        <div class="input-group">
+            <label for="du20_1">Ду‑20:</label>
+            <input type="number" id="du20_1" placeholder="Например: 3293">
+        </div>
+        <div class="input-group">
+            <label for="du80_1">Ду‑80:</label>
+            <input type="number" id="du80_1" placeholder="Например: 64239">
+        </div>
+            </div>
+
+            <!-- Колонка 2: 2-й месяц -->
+            <div class="column">
+                <h2>2-й месяц</h2>
+                <div class="input-group">
+            <label for="main2">Основной счётчик:</label>
+            <input type="number" id="main2" placeholder="Например: 348234">
+        </div>
+        <div class="input-group">
+            <label for="du20_2">Ду‑20:</label>
+            <input type="number" id="du20_2" placeholder="Например: 3539">
+        </div>
+        <div class="input-group">
+            <label for="du80_2">Ду‑80:</label>
+            <input type="number" id="du80_2" placeholder="Например: 65844">
+        </div>
+            </div>
+
+            <!-- Колонка 3: 3-й месяц и кнопки -->
+            <div class="column">
+                <h2>3-й месяц</h2>
+                <div class="input-group">
+            <label for="main3">Основной счётчик:</label>
+            <input type="number" id="main3" placeholder="Введите показание">
+        </div>
+
+                <button onclick="calculate()">Рассчитать</button>
+
+                <div class="result">
+                    <h3>Результаты расчёта:</h3>
+                    <p><strong>Ду‑20:</strong> <span id="result_du20"></span></p>
+                    <p><strong>Ду‑80:</strong> <span id="result_du80"></span></p>
+                </div>
+
+                <button onclick="nextMonth()">Следующий месяц</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
