@@ -75,11 +75,12 @@ function nextMonth() {
 
 
 
-
-
-
-
-
+ // Эффект сжимания кнопки при клике
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('mousedown', () => button.classList.add('pressed'));
+  button.addEventListener('mouseup', () => button.classList.remove('pressed'));
+  button.addEventListener('mouseleave', () => button.classList.remove('pressed'));
+});
 
 function clearFields() {
     // Список ID всех полей ввода
@@ -101,13 +102,6 @@ function clearFields() {
     document.getElementById('result_du20').textContent = '';
     document.getElementById('result_du80').textContent = '';
 }
-
-
-
-
-
-
-
 
 function nextMonth() {
     const main3Value = document.getElementById('main3').value;
