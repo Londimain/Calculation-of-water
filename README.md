@@ -188,6 +188,12 @@ python -m http.server 8000
 
 Ильенков Сергей Михайлович
 
+Контакты:
+
+    📧 Email: ismxfactor@gmail.com
+
+    📞 Телефон: +375 (29) 547-39-03
+    
 📄 Лицензия
 
 MIT License
